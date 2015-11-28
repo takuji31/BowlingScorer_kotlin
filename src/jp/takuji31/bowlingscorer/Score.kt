@@ -9,22 +9,22 @@ sealed class Score(val point: Int) {
 
     class NormalScore(point: Int) : Score(point = point)
 
-    class Miss : Score(0) {
+    object Miss : Score(0) {
         override val label: String
             get() = "-"
     }
 
-    class Foul : Score(0) {
+    object Foul : Score(0) {
         override val label: String
             get() = "F"
     }
 
-    class Gutter : Score(0) {
+    object Gutter : Score(0) {
         override val label: String
             get() = "G"
     }
 
-    class Strike : Score(10) {
+    object Strike : Score(10) {
         override val label: String
             get() = "X"
     }

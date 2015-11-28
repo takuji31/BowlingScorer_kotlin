@@ -17,7 +17,7 @@ class Main {
                     Frame.Strike(),
                     Frame.Strike(),
                     Frame.Strike(),
-                    Frame.TenFrame(Score.Strike(), Score.Strike(), Score.Strike())
+                    Frame.TenFrame(Score.Strike, Score.Strike, Score.Strike)
             )))}")
             println("nine spare : ${Frame.calculate(Frame.from(arrayListOf(
                     Frame.Spare(Score.NormalScore(9)),

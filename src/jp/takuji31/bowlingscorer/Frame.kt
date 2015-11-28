@@ -33,7 +33,7 @@ sealed class Frame(val first: Score, val second: Score? = null) {
         }
     }
 
-    class Strike(nextFrame: Frame? = null) : NormalFrame(first = Score.Strike(), second = null, nextFrame = nextFrame) {
+    class Strike(nextFrame: Frame? = null) : NormalFrame(first = Score.Strike, second = null, nextFrame = nextFrame) {
         override val point: Int
             get() = super.point + if (nextFrame != null) nextFrame.take(2) else 0
     }
