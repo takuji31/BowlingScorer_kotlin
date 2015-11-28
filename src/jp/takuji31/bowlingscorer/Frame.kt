@@ -15,7 +15,7 @@ sealed class Frame(val first: Score, val second: Score? = null) {
     open class NormalFrame(first: Score, second: Score? = null, val nextFrame: Frame? = null) : Frame(first = first, second = second) {
         override fun take(count: Int): Int {
             return when (count) {
-                2 -> super.take(count) + (nextFrame?.take(count - 1) ?: 0)
+                2 -> super.take(count) + if (second == null) (nextFrame?.take(count - 1) ?: 0) else 0
                 else -> super.take(count)
             }
         }
